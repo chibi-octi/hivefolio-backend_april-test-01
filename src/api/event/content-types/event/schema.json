@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "start_time": {
+      "type": "datetime"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "follows": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "string"
+    },
+    "followevent_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followevent.followevent",
+      "mappedBy": "event"
+    },
+    "type_event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::type-event.type-event",
+      "inversedBy": "events"
+    },
+    "admins": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "event"
+    },
+    "games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game",
+      "inversedBy": "events"
+    },
+    "players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "event"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "mappedBy": "events_attended"
+    },
+    "score": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::score.score",
+      "mappedBy": "event"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "events_attended"
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "events"
+    }
+  }
+}

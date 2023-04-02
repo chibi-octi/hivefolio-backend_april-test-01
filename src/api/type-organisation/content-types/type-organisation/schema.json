@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_organisations",
+  "info": {
+    "singularName": "type-organisation",
+    "pluralName": "type-organisations",
+    "displayName": "type-organisation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "type_organisations"
+    }
+  }
+}

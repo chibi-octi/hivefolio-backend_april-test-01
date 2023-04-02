@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "follow_user_characters",
+  "info": {
+    "singularName": "follow-user-character",
+    "pluralName": "follow-user-characters",
+    "displayName": "followUserCharacter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "followcharacter": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "integer"
+    },
+    "character": {
+      "type": "integer"
+    }
+  }
+}

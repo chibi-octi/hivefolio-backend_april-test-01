@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followgames",
+  "info": {
+    "singularName": "followgame",
+    "pluralName": "followgames",
+    "displayName": "followgame",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "followgames"
+    },
+    "game": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::game.game",
+      "inversedBy": "followgame_events"
+    }
+  }
+}

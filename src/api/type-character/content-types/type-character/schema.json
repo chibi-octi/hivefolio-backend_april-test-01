@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_characters",
+  "info": {
+    "singularName": "type-character",
+    "pluralName": "type-characters",
+    "displayName": "type-character"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::character.character",
+      "mappedBy": "type_characters"
+    }
+  }
+}

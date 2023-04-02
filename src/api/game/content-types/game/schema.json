@@ -1,0 +1,265 @@
+{
+  "kind": "collectionType",
+  "collectionName": "games",
+  "info": {
+    "singularName": "game",
+    "pluralName": "games",
+    "displayName": "game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "website": {
+      "type": "string"
+    },
+    "image_profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "seasons": {
+      "type": "string"
+    },
+    "current_season": {
+      "type": "integer",
+      "default": 0
+    },
+    "introduction": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "tiktok": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "twitch": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "discord": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "featured_profile": {
+      "type": "boolean"
+    },
+    "follows": {
+      "type": "integer",
+      "default": 0
+    },
+    "image_highlight_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_4": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_highlight_1": {
+      "type": "string"
+    },
+    "video_highlight_2": {
+      "type": "string"
+    },
+    "video_highlight_3": {
+      "type": "string"
+    },
+    "video_highlight_4": {
+      "type": "string"
+    },
+    "image_feature_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_feature_1": {
+      "type": "string"
+    },
+    "store_xbox": {
+      "type": "string"
+    },
+    "store_playstation": {
+      "type": "string"
+    },
+    "store_nintendo": {
+      "type": "string"
+    },
+    "store_stadia": {
+      "type": "string"
+    },
+    "store_steam": {
+      "type": "string"
+    },
+    "stream_twitch": {
+      "type": "string"
+    },
+    "stream_youtube": {
+      "type": "string"
+    },
+    "boolean_stream_twitch": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_stream_youtube": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_tagline": {
+      "type": "boolean",
+      "default": true
+    },
+    "type_genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-genre.type-genre",
+      "mappedBy": "games"
+    },
+    "blog": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog.blog",
+      "inversedBy": "games"
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::character.character",
+      "mappedBy": "games"
+    },
+    "communities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::community.community",
+      "mappedBy": "games"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "mappedBy": "games"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "mappedBy": "games"
+    },
+    "story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::story.story",
+      "inversedBy": "games"
+    },
+    "score": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::score.score",
+      "mappedBy": "game"
+    },
+    "patchnotegames": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::patchnotegame.patchnotegame",
+      "mappedBy": "game"
+    },
+    "patchnotecharacter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::patchnotecharacter.patchnotecharacter",
+      "mappedBy": "game"
+    },
+    "followgame_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followgame.followgame",
+      "mappedBy": "game"
+    },
+    "leagues": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::league.league",
+      "mappedBy": "game"
+    },
+    "players": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "games"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::item.item",
+      "inversedBy": "games"
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "games"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_communities",
+  "info": {
+    "singularName": "type-community",
+    "pluralName": "type-communities",
+    "displayName": "type-community"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "communities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::community.community",
+      "mappedBy": "type_communities"
+    }
+  }
+}

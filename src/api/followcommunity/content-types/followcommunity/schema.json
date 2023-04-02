@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followcommunities",
+  "info": {
+    "singularName": "followcommunity",
+    "pluralName": "followcommunities",
+    "displayName": "followcommunity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "followcommunities"
+    },
+    "community": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::community.community",
+      "inversedBy": "followcommunity_events"
+    }
+  }
+}

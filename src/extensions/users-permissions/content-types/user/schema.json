@@ -1,0 +1,546 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "type_genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-genre.type-genre",
+      "mappedBy": "users_permissions_users"
+    },
+    "type_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-user.type-user",
+      "inversedBy": "users_permissions_users"
+    },
+    "achievements": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::achievement.achievement",
+      "mappedBy": "related_users"
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::character.character",
+      "mappedBy": "players"
+    },
+    "communities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::community.community",
+      "mappedBy": "members"
+    },
+    "past_communities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::community.community",
+      "mappedBy": "past_members"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "players"
+    },
+    "experiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::experience.experience",
+      "mappedBy": "related_users"
+    },
+    "experience": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::experience.experience",
+      "inversedBy": "admins"
+    },
+    "follows": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::follow.follow",
+      "mappedBy": "user"
+    },
+    "followcharacters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followcharacter.followcharacter",
+      "mappedBy": "user"
+    },
+    "followcommunities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followcommunity.followcommunity",
+      "mappedBy": "user"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "mappedBy": "members"
+    },
+    "past_teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "mappedBy": "past_members"
+    },
+    "story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::story.story",
+      "inversedBy": "authors"
+    },
+    "score": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::score.score",
+      "mappedBy": "lose_player_6"
+    },
+    "scores": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::score.score",
+      "mappedBy": "players"
+    },
+    "followgames": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followgame.followgame",
+      "mappedBy": "user"
+    },
+    "followorganisations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followorganisation.followorganisation",
+      "mappedBy": "user"
+    },
+    "followusers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followuser.followuser",
+      "mappedBy": "user"
+    },
+    "followuser_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followuser.followuser",
+      "mappedBy": "userfollower"
+    },
+    "games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game",
+      "mappedBy": "players"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::item.item",
+      "mappedBy": "players"
+    },
+    "likes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::like.like",
+      "mappedBy": "user"
+    },
+    "notification": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::notification.notification",
+      "mappedBy": "senderuser"
+    },
+    "image_profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gamertag": {
+      "type": "string",
+      "required": true
+    },
+    "website": {
+      "type": "string"
+    },
+    "introduction": {
+      "type": "richtext"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "tiktok": {
+      "type": "string"
+    },
+    "steam": {
+      "type": "string"
+    },
+    "xbox": {
+      "type": "string"
+    },
+    "playstation": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "twitch": {
+      "type": "string"
+    },
+    "discord": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "nintendo": {
+      "type": "string"
+    },
+    "epic": {
+      "type": "string"
+    },
+    "date_of_birth": {
+      "type": "date"
+    },
+    "stadia": {
+      "type": "string"
+    },
+    "video_feature_1": {
+      "type": "string"
+    },
+    "video_highlight_1": {
+      "type": "string"
+    },
+    "video_highlight_2": {
+      "type": "string"
+    },
+    "video_highlight_3": {
+      "type": "string"
+    },
+    "video_highlight_4": {
+      "type": "string"
+    },
+    "events_attended": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "inversedBy": "users"
+    },
+    "image_full": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_feature_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "featured_profile": {
+      "type": "boolean"
+    },
+    "claim_profile": {
+      "type": "boolean"
+    },
+    "verified_profile": {
+      "type": "boolean"
+    },
+    "followcounts": {
+      "type": "integer",
+      "default": 0
+    },
+    "bookmark": {
+      "type": "integer",
+      "default": 0
+    },
+    "image_highlight_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_4": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "boolean_first_name": {
+      "type": "boolean",
+      "default": true
+    },
+    "stream_twitch": {
+      "type": "string"
+    },
+    "boolean_stream_twitch": {
+      "type": "boolean",
+      "default": true
+    },
+    "stream_youtube": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_darkmode": {
+      "type": "boolean",
+      "default": false
+    },
+    "boolean_image_feature_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_feature_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_2": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_3": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_4": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_2": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_3": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_4": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_claim_profile": {
+      "type": "boolean",
+      "default": false
+    },
+    "boolean_tagline": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_last_name": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_country": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_date_of_birth": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_language": {
+      "type": "boolean",
+      "default": true
+    },
+    "onboarding": {
+      "type": "boolean",
+      "default": false
+    },
+    "donate": {
+      "type": "string"
+    },
+    "boolean_donate": {
+      "type": "boolean"
+    },
+    "location": {
+      "type": "string"
+    },
+    "discord_channel": {
+      "type": "string"
+    },
+    "boolean_discord_channel": {
+      "type": "string"
+    },
+    "followevents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followevent.followevent",
+      "mappedBy": "user"
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "members"
+    },
+    "past_organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "past_members"
+    },
+    "achievement": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::achievement.achievement",
+      "inversedBy": "admins"
+    },
+    "followerCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "userRole": {
+      "type": "string",
+      "default": "user"
+    },
+    "boolean_stream_youtube": {
+      "type": "boolean"
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "managers"
+    },
+    "start_gg_account": {
+      "type": "string"
+    },
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country"
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::job.job",
+      "mappedBy": "related_users"
+    },
+    "jobs_applied": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::job.job",
+      "mappedBy": "applied_users"
+    }
+  }
+}

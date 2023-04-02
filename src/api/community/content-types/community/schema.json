@@ -1,0 +1,365 @@
+{
+  "kind": "collectionType",
+  "collectionName": "communities",
+  "info": {
+    "singularName": "community",
+    "pluralName": "communities",
+    "displayName": "community",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "image_profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "website": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "tiktok": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "twitch": {
+      "type": "string"
+    },
+    "discord": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "xbox": {
+      "type": "string"
+    },
+    "playstation": {
+      "type": "string"
+    },
+    "nintendo": {
+      "type": "string"
+    },
+    "steam": {
+      "type": "string"
+    },
+    "epic": {
+      "type": "string"
+    },
+    "introduction": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "likes": {
+      "type": "integer",
+      "default": 0
+    },
+    "date_of_birth": {
+      "type": "date"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "boolean_featured_profile": {
+      "type": "boolean",
+      "default": false
+    },
+    "boolean_claim_profile": {
+      "type": "boolean",
+      "default": false
+    },
+    "boolean_verified_profile": {
+      "type": "boolean",
+      "default": false
+    },
+    "image_background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_highlight_1": {
+      "type": "string"
+    },
+    "video_highlight_2": {
+      "type": "string"
+    },
+    "video_highlight_3": {
+      "type": "string"
+    },
+    "video_highlight_4": {
+      "type": "string"
+    },
+    "image_highlight_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_4": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "stadia": {
+      "type": "string"
+    },
+    "boolean_open_community": {
+      "type": "boolean",
+      "default": false
+    },
+    "image_feature_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_feature_1": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string",
+      "unique": true
+    },
+    "stream_twitch": {
+      "type": "string"
+    },
+    "boolean_stream_twitch": {
+      "type": "boolean",
+      "default": true
+    },
+    "stream_youtube": {
+      "type": "string"
+    },
+    "boolean_stream_youtube": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_tagline": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_feature_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_feature_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_description": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_introduction": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_date_of_birth": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_2": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_3": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_4": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_2": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_3": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_4": {
+      "type": "boolean",
+      "default": true
+    },
+    "donate": {
+      "type": "string"
+    },
+    "boolean_donate": {
+      "type": "boolean"
+    },
+    "boolean_onboarding": {
+      "type": "boolean",
+      "default": false
+    },
+    "discord_channel": {
+      "type": "string"
+    },
+    "boolean_discord_channel": {
+      "type": "boolean",
+      "default": true
+    },
+    "followcommunity_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followcommunity.followcommunity",
+      "mappedBy": "community"
+    },
+    "type_communities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-community.type-community",
+      "inversedBy": "communities"
+    },
+    "type_genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-genre.type-genre",
+      "mappedBy": "communities"
+    },
+    "achievements": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::achievement.achievement",
+      "mappedBy": "related_communities"
+    },
+    "games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game",
+      "inversedBy": "communities"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "communities"
+    },
+    "admins": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "inversedBy": "communities"
+    },
+    "past_teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "inversedBy": "past_communities"
+    },
+    "past_members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "past_communities"
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::job.job",
+      "inversedBy": "related_communities"
+    },
+    "experiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::experience.experience",
+      "inversedBy": "related_communities"
+    },
+    "type_genre": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::type-genre.type-genre",
+      "mappedBy": "community"
+    },
+    "notification": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::notification.notification",
+      "mappedBy": "sendercommunity"
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "communities"
+    },
+    "past_organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "past_communities"
+    },
+    "follows": {
+      "type": "integer",
+      "default": 0
+    },
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country"
+    }
+  }
+}

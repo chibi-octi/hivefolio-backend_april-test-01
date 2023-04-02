@@ -1,0 +1,371 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organisations",
+  "info": {
+    "singularName": "organisation",
+    "pluralName": "organisations",
+    "displayName": "organisation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "tiktok": {
+      "type": "string"
+    },
+    "image_profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files",
+        "videos",
+        "images"
+      ]
+    },
+    "admins": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "organisations"
+    },
+    "twitch": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "discord": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "xbox": {
+      "type": "string"
+    },
+    "playstation": {
+      "type": "string"
+    },
+    "nintendo": {
+      "type": "string"
+    },
+    "steam": {
+      "type": "string"
+    },
+    "epic": {
+      "type": "string"
+    },
+    "introduction": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "follows": {
+      "type": "integer",
+      "default": 0
+    },
+    "leagues": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::league.league",
+      "mappedBy": "organisation"
+    },
+    "stadia": {
+      "type": "string"
+    },
+    "date_of_birth": {
+      "type": "date"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "inversedBy": "organisations"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "boolean_featured_profile": {
+      "type": "boolean"
+    },
+    "boolean_claim_profile": {
+      "type": "boolean"
+    },
+    "boolean_verified_profile": {
+      "type": "boolean"
+    },
+    "image_background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game",
+      "inversedBy": "organisations"
+    },
+    "followorganisation_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followorganisation.followorganisation",
+      "mappedBy": "organisation"
+    },
+    "video_highlight_1": {
+      "type": "string"
+    },
+    "video_highlight_2": {
+      "type": "string"
+    },
+    "video_highlight_3": {
+      "type": "string"
+    },
+    "video_highlight_4": {
+      "type": "string"
+    },
+    "image_highlight_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_4": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "username": {
+      "type": "string",
+      "unique": true
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "inversedBy": "organisations"
+    },
+    "communities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::community.community",
+      "inversedBy": "organisations"
+    },
+    "image_feature_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_feature_1": {
+      "type": "string"
+    },
+    "type_organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-organisation.type-organisation",
+      "inversedBy": "organisations"
+    },
+    "stream_twitch": {
+      "type": "string"
+    },
+    "boolean_stream_twitch": {
+      "type": "boolean",
+      "default": true
+    },
+    "stream_youtube": {
+      "type": "string"
+    },
+    "boolean_stream_youtube": {
+      "type": "boolean",
+      "default": true
+    },
+    "scores": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::score.score",
+      "inversedBy": "organisations"
+    },
+    "boolean_image_feature_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_feature_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_description": {
+      "type": "boolean"
+    },
+    "boolean_introduction": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_date_of_birth": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_2": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_3": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_video_highlight_4": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_1": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_2": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_3": {
+      "type": "boolean",
+      "default": true
+    },
+    "boolean_image_highlight_4": {
+      "type": "boolean",
+      "default": true
+    },
+    "coaches": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "boolean_tagline": {
+      "type": "boolean",
+      "default": true
+    },
+    "managers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "past_teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "inversedBy": "past_organisations"
+    },
+    "past_members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "past_organisations"
+    },
+    "donate": {
+      "type": "string"
+    },
+    "boolean_donate": {
+      "type": "boolean"
+    },
+    "type_genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-genre.type-genre",
+      "inversedBy": "organisations"
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::job.job",
+      "inversedBy": "related_organisations"
+    },
+    "past_communities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::community.community",
+      "inversedBy": "past_organisations"
+    },
+    "experiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::experience.experience",
+      "inversedBy": "related_organisations"
+    },
+    "boolean_onboarding": {
+      "type": "boolean",
+      "default": false
+    },
+    "location": {
+      "type": "string"
+    },
+    "achievements": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::achievement.achievement",
+      "inversedBy": "related_organisations"
+    },
+    "discord_channel": {
+      "type": "string"
+    },
+    "boolean_discord_channel": {
+      "type": "boolean",
+      "default": true
+    },
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country"
+    }
+  }
+}

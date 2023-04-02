@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followusers",
+  "info": {
+    "singularName": "followuser",
+    "pluralName": "followusers",
+    "displayName": "followuser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "followusers"
+    },
+    "userfollower": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "followuser_events"
+    }
+  }
+}

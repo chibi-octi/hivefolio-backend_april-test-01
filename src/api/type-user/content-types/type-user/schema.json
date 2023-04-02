@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_users",
+  "info": {
+    "singularName": "type-user",
+    "pluralName": "type-users",
+    "displayName": "type-user"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "type_users"
+    }
+  }
+}

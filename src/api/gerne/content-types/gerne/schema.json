@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gernes",
+  "info": {
+    "singularName": "gerne",
+    "pluralName": "gernes",
+    "displayName": "gerne"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type_genre": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::type-genre.type-genre",
+      "inversedBy": "gernes"
+    }
+  }
+}

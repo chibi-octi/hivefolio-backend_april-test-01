@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "follow_user_followers",
+  "info": {
+    "singularName": "follow-user-follower",
+    "pluralName": "follow-user-followers",
+    "displayName": "followUserFollower",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "integer"
+    },
+    "userfollower": {
+      "type": "integer"
+    },
+    "followuser": {
+      "type": "integer"
+    }
+  }
+}

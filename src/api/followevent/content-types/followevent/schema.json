@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followevents",
+  "info": {
+    "singularName": "followevent",
+    "pluralName": "followevents",
+    "displayName": "followevent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "followevents"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "followevent_events"
+    }
+  }
+}

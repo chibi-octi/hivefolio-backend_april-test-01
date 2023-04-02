@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "like_user_teams",
+  "info": {
+    "singularName": "like-user-team",
+    "pluralName": "like-user-teams",
+    "displayName": "likeUserTeam"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "like": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "integer"
+    },
+    "team": {
+      "type": "integer"
+    }
+  }
+}

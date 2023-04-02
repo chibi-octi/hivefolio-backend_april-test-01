@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "follow_user_communities",
+  "info": {
+    "singularName": "follow-user-community",
+    "pluralName": "follow-user-communities",
+    "displayName": "followUserCommunity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "integer"
+    },
+    "community": {
+      "type": "integer"
+    },
+    "followcommunity": {
+      "type": "integer"
+    }
+  }
+}

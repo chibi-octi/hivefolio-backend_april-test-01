@@ -1,0 +1,305 @@
+{
+  "kind": "collectionType",
+  "collectionName": "characters",
+  "info": {
+    "singularName": "character",
+    "pluralName": "characters",
+    "displayName": "character",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image_profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "stat_evasivness_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_combo_damage_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_mobility_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_wall_carry_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_throw_game_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "video_feature_1": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "first_appearance": {
+      "type": "date"
+    },
+    "update": {
+      "type": "date"
+    },
+    "introduction": {
+      "type": "richtext"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "featured_character": {
+      "type": "boolean"
+    },
+    "image_feature_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_full": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "follows": {
+      "type": "integer",
+      "default": 0
+    },
+    "image_highlight_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_highlight_4": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_highlight_1": {
+      "type": "string"
+    },
+    "video_highlight_2": {
+      "type": "string"
+    },
+    "video_highlight_3": {
+      "type": "string"
+    },
+    "video_highlight_4": {
+      "type": "string"
+    },
+    "stat_health_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_power_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_technique_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_range_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_zoning_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_damage_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_grappling_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_survivability_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_special_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_speed_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_aerial_10": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_difficulty_3": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_offense_5": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_endurance_5": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_mobility_5": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_scoring_5": {
+      "type": "decimal",
+      "default": 0
+    },
+    "stat_support_5": {
+      "type": "decimal",
+      "default": 0
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "tiktok": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "twitch": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "xbox": {
+      "type": "string"
+    },
+    "playstation": {
+      "type": "string"
+    },
+    "nintendo": {
+      "type": "string"
+    },
+    "steam": {
+      "type": "string"
+    },
+    "stadia": {
+      "type": "string"
+    },
+    "discord": {
+      "type": "string"
+    },
+    "epic": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game",
+      "inversedBy": "characters"
+    },
+    "followcharacter_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::followcharacter.followcharacter",
+      "mappedBy": "character"
+    },
+    "patchnotecharacters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::patchnotecharacter.patchnotecharacter",
+      "mappedBy": "character"
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::character.character",
+      "mappedBy": "related_characters"
+    },
+    "related_characters": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::character.character",
+      "inversedBy": "characters"
+    },
+    "players": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "characters"
+    },
+    "type_characters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-character.type-character",
+      "inversedBy": "characters"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::item.item",
+      "inversedBy": "characters"
+    },
+    "type_genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-genre.type-genre",
+      "inversedBy": "characters"
+    }
+  }
+}

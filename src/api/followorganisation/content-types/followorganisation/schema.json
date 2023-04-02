@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followorganisations",
+  "info": {
+    "singularName": "followorganisation",
+    "pluralName": "followorganisations",
+    "displayName": "followorganisation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "followorganisations"
+    },
+    "organisation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organisation.organisation",
+      "inversedBy": "followorganisation_events"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "singularName": "notification",
+    "pluralName": "notifications",
+    "displayName": "notification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "boolean_read": {
+      "type": "boolean",
+      "default": false
+    },
+    "boolean_request": {
+      "type": "boolean"
+    },
+    "boolean_approve": {
+      "type": "boolean"
+    },
+    "boolean_decline": {
+      "type": "boolean"
+    },
+    "receiverteam": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team.team",
+      "inversedBy": "notification"
+    },
+    "typenotification": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::type-notification.type-notification",
+      "inversedBy": "notification"
+    },
+    "receiveruser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "notification"
+    },
+    "receivercommunity": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::community.community",
+      "inversedBy": "notification"
+    },
+    "senderuser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "notification"
+    },
+    "senderteam": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team.team",
+      "inversedBy": "notification"
+    },
+    "sendercommunity": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::community.community",
+      "inversedBy": "notification"
+    }
+  }
+}

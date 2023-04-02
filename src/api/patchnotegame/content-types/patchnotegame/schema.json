@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "patchnotegames",
+  "info": {
+    "singularName": "patchnotegame",
+    "pluralName": "patchnotegames",
+    "displayName": "patchnotegame",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "detail": {
+      "type": "richtext"
+    },
+    "game": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::game.game",
+      "inversedBy": "patchnotegames"
+    },
+    "patchnotecharacters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::patchnotecharacter.patchnotecharacter",
+      "mappedBy": "patchnotegame"
+    }
+  }
+}

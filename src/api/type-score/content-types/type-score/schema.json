@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_scores",
+  "info": {
+    "singularName": "type-score",
+    "pluralName": "type-scores",
+    "displayName": "type-score"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
